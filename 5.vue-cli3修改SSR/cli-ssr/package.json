@@ -1,0 +1,34 @@
+{
+    "name": "cli-ssr",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "build:client": "vue-cli-service build",
+        "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server",
+        "build:all": "npm run build:server && move dist\\vue-ssr-server-bundle.json bundle && npm run build:client && move bundle dist\\vue-ssr-server-bundle.json"
+    },
+    "dependencies": {
+        "core-js": "^3.8.3",
+        "cross-env": "^7.0.3",
+        "express": "^4.18.2",
+        "vue": "^2.6.14",
+        "vue-router": "^3.5.1",
+        "vue-server-renderer": "^2.7.16",
+        "vuex": "^3.6.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/eslint-parser": "^7.12.16",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-plugin-vuex": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "eslint": "^7.32.0",
+        "eslint-plugin-vue": "^8.0.3",
+        "vue-template-compiler": "^2.6.14"
+    }
+}
